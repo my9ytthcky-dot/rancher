@@ -1,136 +1,96 @@
 import React from 'react';
-import { Home, Building2, Car, Fence, Droplets, Sparkles, Phone, CheckCircle } from 'lucide-react';
+import { Quote, Star, Sparkles } from 'lucide-react';
 
-const Services = () => {
-  const services = [
-    {
-      icon: Home,
-      title: "Residential House Washing",
-      description: "Complete exterior house cleaning including siding, windows, and trim. Safe, effective cleaning that restores your home's curb appeal.",
-      features: ["Soft wash technique", "Eco-friendly solutions", "Window cleaning included", "Gutter cleaning"],
-      price: "Starting at $199",
-      popular: false
-    },
-    {
-      icon: Building2,
-      title: "Commercial Property Cleaning",
-      description: "Professional cleaning services for businesses, retail spaces, and commercial buildings. Maintain a professional appearance.",
-      features: ["Flexible scheduling", "Fully insured", "Regular maintenance plans", "Emergency cleaning"],
-      price: "Custom Pricing",
-      popular: true
-    },
-    {
-      icon: Droplets,
-      title: "Driveway & Walkway Cleaning",
-      description: "Remove oil stains, dirt, and grime from concrete surfaces. Restore the original appearance of your driveways and walkways.",
-      features: ["Stain removal", "Concrete sealing", "Pressure washing", "Surface restoration"],
-      price: "Starting at $149",
-      popular: false
-    },
-    {
-      icon: Sparkles,
-      title: "Deck & Patio Cleaning",
-      description: "Specialized cleaning for wooden decks, patios, and outdoor living spaces. Prepare surfaces for staining or sealing.",
-      features: ["Wood restoration", "Stain preparation", "Mold removal", "Surface protection"],
-      price: "Starting at $179",
-      popular: false
-    },
-    {
-      icon: Fence,
-      title: "Fence Cleaning & Restoration",
-      description: "Clean and restore wooden, vinyl, and metal fences. Remove dirt, mildew, and weathering for a fresh appearance.",
-      features: ["All fence types", "Mildew removal", "Stain preparation", "Protective treatments"],
-      price: "Starting at $129",
-      popular: false
-    }
-  ];
+const testimonials = [
+  {
+    quote:
+      'Rancher Services restored our entire storefront overnight. The sidewalks, windows, and awnings looked brand new before customers arrived.',
+    name: 'Melissa Carter',
+    role: 'General Manager, Midtown Market',
+    rating: 5,
+  },
+  {
+    quote:
+      'The team was punctual, professional, and incredibly thorough. They took extra care around our landscaping and outdoor kitchen.',
+    name: 'Daniel Nguyen',
+    role: 'Homeowner, Sugar Land',
+    rating: 5,
+  },
+  {
+    quote:
+      'We rely on Rancher Services for quarterly cleanings across multiple communities. Communication is easy and the results are flawless.',
+    name: 'Jasmine Turner',
+    role: 'HOA Property Manager',
+    rating: 5,
+  },
+];
 
+const highlights = [
+  'Same-day quotes and scheduling',
+  'Fully licensed, bonded & insured crew',
+  'Eco-friendly, non-toxic detergents',
+  'Satisfaction guaranteed on every project',
+];
+
+const Testimonials = () => {
   return (
-    <section id="testimonials" className="section-padding bg-white">
-      <div className="container mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Professional Pressure Washing
-            <span className="gradient-text block">Services in Houston</span>
+    <section id="testimonials" className="bg-white py-24">
+      <div className="container mx-auto px-4">
+        <div className="fade-in-up mb-16 text-center">
+          <div className="mx-auto mb-8 inline-flex items-center gap-2 rounded-full bg-blue-100 px-6 py-3 text-sm font-semibold text-blue-700">
+            <Sparkles size={16} />
+            <span>Client Feedback</span>
+          </div>
+          <h2 className="text-responsive-2xl text-balance font-bold leading-tight text-gray-900">
+            Five-star experiences from Houston neighbors
           </h2>
-          
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed text-balance">
-            From residential homes to commercial properties, we provide comprehensive pressure washing solutions 
-            tailored to your specific needs with guaranteed satisfaction.
+          <p className="text-balance mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-gray-600">
+            We measure success by the smiles and referrals of our clients. Here are a few recent stories from homeowners,
+            property managers, and business owners who trust us with their curb appeal.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {services.map((service, index) => {
-            const IconComponent = service.icon;
-            return (
-              <div
-                key={index}
-                className={`card p-8 relative overflow-hidden card-hover fade-in-up stagger-${(index % 6) + 1} ${
-                  service.popular ? 'ring-2 ring-blue-500' : ''
-                }`}
-              >
-                {service.popular && (
-                  <div className="absolute top-0 right-0 gradient-accent text-white px-4 py-2 text-sm font-bold rounded-bl-lg">
-                    Most Popular
-                  </div>
-                )}
-                
-                <div className="w-16 h-16 gradient-primary rounded-xl flex items-center justify-center mb-6 hover-scale">
-                  <IconComponent className="text-white" size={28} />
-                </div>
-                
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-                
-                <ul className="space-y-3 mb-8">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span className="text-gray-700 font-medium">{feature}</span>
-                    </li>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {testimonials.map((testimonial) => (
+            <article key={testimonial.name} className="card flex h-full flex-col justify-between rounded-3xl p-8">
+              <Quote className="h-10 w-10 text-blue-600" />
+              <p className="mt-6 flex-1 text-lg leading-relaxed text-gray-700">“{testimonial.quote}”</p>
+              <div className="mt-6">
+                <div className="flex items-center gap-1 text-amber-400">
+                  {Array.from({ length: testimonial.rating }).map((_, index) => (
+                    <Star key={index} className="h-4 w-4 fill-current" />
                   ))}
-                </ul>
-                
-                <div className="flex items-center justify-between pt-6 border-t border-gray-100">
-                  <div className="text-2xl font-bold gradient-text">{service.price}</div>
-                  <button 
-                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="btn-primary text-sm"
-                  >
-                    Get Quote
-                  </button>
                 </div>
+                <p className="mt-3 font-semibold text-gray-900">{testimonial.name}</p>
+                <p className="text-sm text-gray-500">{testimonial.role}</p>
               </div>
-            );
-          })}
+            </article>
+          ))}
         </div>
 
-        {/* CTA Section */}
-        <div className="card p-12 text-center fade-in-up stagger-6">
-          <h3 className="text-3xl font-bold text-gray-900 mb-6">
-            Need a Custom Solution?
-          </h3>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Every property is unique. Contact us for a personalized quote and service plan 
-            tailored to your specific needs and budget.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
+        <div className="mt-16 rounded-3xl bg-blue-600 px-8 py-12 text-white shadow-large">
+          <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-10 lg:flex-row">
+            <div>
+              <h3 className="text-3xl font-bold">Your property could be our next success story</h3>
+              <p className="mt-4 text-white/80">
+                Share your project details and receive a tailored cleaning plan, complete with transparent pricing and a
+                dedicated project manager.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-3 text-sm font-semibold text-white/90 sm:grid-cols-2">
+              {highlights.map((highlight) => (
+                <div key={highlight} className="flex items-center gap-2 rounded-2xl bg-white/10 px-4 py-3">
+                  <Star className="h-4 w-4 text-amber-300" />
+                  <span>{highlight}</span>
+                </div>
+              ))}
+            </div>
+            <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="btn-primary text-lg"
+              className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-blue-600 shadow-soft transition hover:bg-blue-50"
             >
-              Get Free Estimate
+              Get My Quote
             </button>
-            <a 
-              href="tel:+1-346-401-0323"
-              className="flex items-center justify-center space-x-2 btn-secondary text-lg"
-            >
-              <Phone size={20} />
-              <span>Call Now</span>
-            </a>
           </div>
         </div>
       </div>
@@ -138,4 +98,5 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Testimonials;
+

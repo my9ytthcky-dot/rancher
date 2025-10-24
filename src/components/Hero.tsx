@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, CheckCircle, Star, Award, Shield } from 'lucide-react';
+import heroImage from './willwashing.png';
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -15,23 +16,23 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="relative text-white pt-20 overflow-hidden min-h-screen flex items-center">
-      {/* Background Image with Professional Overlay */}
-      <div className="absolute inset-0 z-0">
+    <section id="home" className="relative flex min-h-screen items-center overflow-hidden bg-gray-900 pt-24 text-white">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900/95 to-blue-900/80" />
         <img
           src="https://images.pexels.com/photos/6190373/pexels-photo-6190373.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          alt="Professional pressure washing service"
-          className="w-full h-full object-cover"
+          alt="Professional pressure washing team cleaning a driveway"
+          className="h-full w-full object-cover opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-gray-900/80"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.35),_transparent_60%)]" />
       </div>
-      
-      <div className="max-w-7xl mx-auto container-padding section-padding relative z-10">
+
+      <div className="container-padding relative z-10 mx-auto max-w-7xl section-padding">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             {/* Badge */}
             <div className="fade-in-up">
-              <div className="inline-flex items-center space-x-3 glass rounded-full px-6 py-3 mb-8">
+              <div className="glass inline-flex items-center space-x-3 rounded-full px-6 py-3 mb-8 border border-white/20">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   <span className="text-sm font-semibold text-white">LICENSED & INSURED</span>
@@ -44,16 +45,16 @@ const Hero = () => {
               </div>
               
               {/* Main Headline */}
-              <h1 className="text-responsive-3xl font-bold leading-tight tracking-tight mb-8 text-balance">
+              <h1 className="text-responsive-3xl text-balance font-bold leading-tight tracking-tight mb-8">
                 Houston's Premier
-                <span className="text-blue-400 block">Pressure Washing</span>
-                <span className="text-white block">Experts</span>
+                <span className="block text-blue-400">Pressure Washing</span>
+                <span className="block text-white">Specialists</span>
               </h1>
               
               {/* Subheadline */}
-              <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl mb-10 text-balance">
-                Professional pressure washing services for residential and commercial properties. 
-                <span className="text-blue-400 font-semibold"> Guaranteed results</span> with 3+ years of trusted experience.
+              <p className="text-balance mb-10 max-w-2xl text-xl leading-relaxed text-white/90 md:text-2xl">
+                Polished curb appeal starts with a pristine exterior. From driveways to commercial plazas, our licensed
+                professionals deliver spotless results with eco-conscious solutions and meticulous care.
               </p>
             </div>
             
@@ -75,7 +76,7 @@ const Hero = () => {
             </div>
 
             {/* Trust Indicators */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-8 fade-in-up stagger-2">
+            <div className="fade-in-up stagger-2 grid grid-cols-2 gap-4 pt-8 lg:grid-cols-4">
               {trustIndicators.map((item, index) => {
                 const IconComponent = item.icon;
                 return (
@@ -90,30 +91,25 @@ const Hero = () => {
           </div>
 
           {/* Hero Image */}
-          <div className="relative fade-in-up stagger-3 lg:block hidden">
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-large relative float">
-              <img
-                src="/src/components/willwashing.png"
-                alt="Professional pressure washing team at work"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+          <div className="relative hidden rounded-2xl bg-white/5 p-6 backdrop-blur lg:block">
+            <div className="float relative overflow-hidden rounded-2xl shadow-large">
+              <img src={heroImage} alt="Professional pressure washing team at work" className="h-full w-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>
-            
-            {/* Floating Stats Cards */}
-            <div className="absolute -bottom-6 -left-6 card p-6 text-gray-900 shadow-large">
-              <div className="text-3xl font-bold gradient-text">3+</div>
-              <div className="text-sm font-semibold text-gray-600">Years Experience</div>
+
+            <div className="absolute -bottom-8 left-6 right-6 rounded-2xl border border-white/20 bg-white/90 p-6 text-gray-900 shadow-large">
+              <div className="text-3xl font-bold text-blue-600">3+</div>
+              <div className="text-sm font-semibold text-gray-600">Years of trusted service</div>
             </div>
-            
-            <div className="absolute -top-6 -right-6 gradient-primary text-white p-6 rounded-xl shadow-large">
-              <div className="flex items-center space-x-1 mb-2">
+
+            <div className="absolute -top-6 right-6 rounded-xl border border-white/20 bg-blue-600/90 p-6 text-white shadow-large">
+              <div className="mb-2 flex items-center space-x-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-amber-400 fill-current" />
+                  <Star key={i} className="h-4 w-4 text-amber-300" />
                 ))}
               </div>
-              <div className="text-2xl font-bold">5/5</div>
-              <div className="text-sm opacity-90">200+ Reviews</div>
+              <div className="text-2xl font-bold">200+</div>
+              <div className="text-sm text-white/90">Satisfied clients</div>
             </div>
           </div>
         </div>
