@@ -3,76 +3,73 @@ import { Award, Users, MapPin, Star, Shield, CheckCircle } from 'lucide-react';
 
 const About = () => {
   const stats = [
-    { icon: Award, number: "3+", label: "Years Experience", description: "Trusted Service" },
-    { icon: Users, number: "200+", label: "Happy Customers", description: "Satisfied Clients" },
-    { icon: MapPin, number: "50+", label: "Areas Served", description: "Greater Houston" },
-    { icon: Star, number: "5/5", label: "Google Rating", description: "15+ Reviews" }
+    { icon: Award, number: '3+', label: 'Years Experience', description: 'Trusted Service' },
+    { icon: Users, number: '200+', label: 'Happy Customers', description: 'Satisfied Clients' },
+    { icon: MapPin, number: '50+', label: 'Areas Served', description: 'Greater Houston' },
+    { icon: Star, number: '5/5', label: 'Google Rating', description: 'Verified Reviews' },
   ];
 
   const certifications = [
-    "Licensed, Bonded & Fully Insured",
-    "EPA Certified & Environmentally Responsible", 
-    "Better Business Bureau A+ Rating",
-    "PWNA Certified Professional",
-    "Commercial & Residential Specialist",
-    "Emergency Response Available 24/7"
+    'Licensed, bonded & fully insured',
+    'EPA compliant & eco-conscious',
+    'Better Business Bureau A+ rating',
+    'PWNA certified technicians',
+    'Commercial & residential specialists',
+    'Emergency response within 24 hours',
   ];
 
   return (
     <section id="about" className="section-padding bg-white">
-      <div className="max-w-7xl mx-auto container-padding">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-20">
+      <div className="container-padding mx-auto max-w-7xl">
+        <div className="mb-20 grid grid-cols-1 items-center gap-20 lg:grid-cols-2">
           <div className="fade-in-left">
-            <div className="inline-flex items-center space-x-2 gradient-primary text-white rounded-full px-6 py-3 mb-8 font-semibold text-sm">
+            <div className="mb-8 inline-flex items-center space-x-2 rounded-full bg-blue-100 px-6 py-3 text-sm font-semibold text-blue-700">
               <Shield size={16} />
-              <span>TRUSTED PROFESSIONALS</span>
+              <span>Trusted Professionals</span>
             </div>
-            
-            <h2 className="text-responsive-2xl font-bold text-gray-900 mb-8 leading-tight text-balance">
-              Houston's Most
-              <span className="gradient-text block">Trusted</span>
-              Service Company
+
+            <h2 className="text-responsive-2xl text-balance font-bold leading-tight text-gray-900">
+              Houston's most dependable
+              <span className="block gradient-text">exterior cleaning team</span>
             </h2>
-            
-            <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+
+            <div className="mt-8 space-y-6 text-lg leading-relaxed text-gray-600">
               <p>
-                For over <span className="font-bold gradient-text">3 years</span>, Rancher Services has been the premier choice for homeowners and businesses throughout the Greater Houston area. We've built our reputation on delivering <span className="font-semibold text-gray-800">exceptional results</span>, outstanding customer service, and unmatched reliability.
+                For more than three years, Rancher Services has helped homeowners, HOAs, and business owners across Greater
+                Houston protect their investments. Every project receives the same careful preparation, premium equipment, and
+                white-glove communication.
               </p>
-              
               <p>
-                Our team of <span className="font-semibold text-gray-800">certified professionals</span> uses state-of-the-art equipment and eco-friendly cleaning solutions to safely and effectively clean your property. We're fully licensed, bonded, and insured, giving you complete peace of mind with every service.
+                Our certified technicians are licensed, bonded, and insured. We leverage soft-wash technology and responsible
+                detergents that safeguard landscaping while removing the toughest buildup.
               </p>
-              
               <p>
-                From small residential projects to large commercial contracts, we approach every job with the same level of <span className="font-semibold gradient-text">dedication and attention to detail</span>. Your satisfaction is our top priority, and we stand behind our work with a <span className="font-bold text-green-600">100% satisfaction guarantee</span>.
+                From family residences to large commercial plazas, we deliver consistent results backed by a 100% satisfaction
+                guarantee—if something isn’t perfect, we make it right immediately.
               </p>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {certifications.map((cert, index) => (
-                <div key={index} className="flex items-center space-x-3 p-4 card rounded-lg hover-lift">
-                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700 font-medium text-sm">{cert}</span>
+            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {certifications.map((cert) => (
+                <div key={cert} className="card flex items-center space-x-3 rounded-xl p-4 text-left">
+                  <CheckCircle className="h-5 w-5 flex-shrink-0 text-green-500" />
+                  <span className="text-sm font-medium text-gray-700">{cert}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="space-y-8 fade-in-right">
-            <div className="float">
-              <div className="aspect-w-4 aspect-h-3 rounded-2xl overflow-hidden shadow-large relative">
-                <img
-                  src="https://images.pexels.com/photos/5691656/pexels-photo-5691656.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Professional pressure washing team"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="glass-dark text-white p-6 rounded-xl">
-                    <div className="text-xl font-bold mb-2">Professional Excellence</div>
-                    <div className="text-white/80">Certified team with premium equipment</div>
-                  </div>
-                </div>
+          <div className="fade-in-right space-y-10">
+            <div className="relative overflow-hidden rounded-3xl shadow-large">
+              <img
+                src="https://images.pexels.com/photos/5691656/pexels-photo-5691656.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Pressure washing technician cleaning siding"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-white/90 p-6 text-gray-900 shadow-large">
+                <p className="text-sm font-semibold uppercase tracking-wide text-blue-600">Professional excellence</p>
+                <p className="mt-1 text-lg font-semibold">Certified crew • Premium commercial equipment</p>
               </div>
             </div>
 
@@ -80,13 +77,17 @@ const About = () => {
               {stats.map((stat, index) => {
                 const IconComponent = stat.icon;
                 return (
-                  <div key={index} className="text-center p-6 card rounded-xl card-hover fade-in-up stagger-3" style={{animationDelay: `${0.2 + index * 0.1}s`}}>
-                    <div className="w-14 h-14 gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4 hover-scale">
-                      <IconComponent className="text-white" size={24} />
-                    </div>
-                    <div className="text-3xl font-bold gradient-text mb-2">{stat.number}</div>
-                    <div className="text-gray-800 font-bold text-lg mb-1">{stat.label}</div>
-                    <div className="text-gray-500 text-sm font-medium">{stat.description}</div>
+                  <div
+                    key={stat.label}
+                    className="card hover-lift flex flex-col items-center rounded-2xl p-6 text-center"
+                    style={{ animationDelay: `${0.1 * index}s` }}
+                  >
+                    <span className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-600 text-white shadow-soft">
+                      <IconComponent size={24} />
+                    </span>
+                    <span className="text-3xl font-bold text-blue-600">{stat.number}</span>
+                    <span className="mt-1 text-lg font-semibold text-gray-800">{stat.label}</span>
+                    <span className="text-sm text-gray-500">{stat.description}</span>
                   </div>
                 );
               })}
@@ -94,32 +95,25 @@ const About = () => {
           </div>
         </div>
 
-        {/* Guarantee Section */}
-        <div className="fade-in-up stagger-4">
-          <div className="card rounded-2xl p-12 text-center max-w-4xl mx-auto">
-            <div className="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mx-auto mb-8">
-              <Shield className="text-white" size={32} />
+        <div className="fade-in-up">
+          <div className="card mx-auto max-w-4xl rounded-3xl p-12 text-center">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-600 text-white shadow-soft">
+              <Shield size={28} />
             </div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">
-              Our 100% Satisfaction Guarantee
-            </h3>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8">
-              We stand behind every job with our <span className="font-bold gradient-text">100% satisfaction guarantee</span>. 
-              If you're not completely satisfied with our work, we\'ll return to make it right at no additional cost. 
-              That's our commitment to excellence.
+            <h3 className="mt-6 text-3xl font-bold text-gray-900">Our Satisfaction Promise</h3>
+            <p className="mt-4 text-lg leading-relaxed text-gray-600">
+              We stand behind every project. If anything falls short of perfection, our crew returns immediately to address it at
+              no additional cost. It’s the peace of mind our clients count on.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
+            <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+              <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="btn-primary text-lg"
               >
-                Experience the Difference
+                Schedule Your Cleaning
               </button>
-              <a 
-                href="tel:+1-346-401-0323"
-                className="btn-secondary text-lg"
-              >
-                Call for Free Estimate
+              <a href="tel:+1-346-401-0323" className="btn-secondary text-lg">
+                Speak with a Specialist
               </a>
             </div>
           </div>
