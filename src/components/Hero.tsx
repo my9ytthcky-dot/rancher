@@ -19,7 +19,7 @@ const Hero = () => {
       {/* Background Image with Professional Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.pexels.com/photos/6190373/pexels-photo-6190373.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          src="images/https://photos.app.goo.gl/K77QpktwTE1auK4Y9? auto=compress&cs=tinysrgb&w=1920"
           alt="Professional pressure washing service"
           className="w-full h-full object-cover"
         />
