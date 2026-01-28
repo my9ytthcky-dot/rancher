@@ -10,6 +10,8 @@ const Contact = () => {
     propertySize: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -18,17 +20,39 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Thank you for your inquiry! We will contact you within 2 hours with your quote.');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      service: '',
-      propertySize: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/send-quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          propertySize: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -36,15 +60,15 @@ const Contact = () => {
       icon: Phone,
       title: "Call or Text",
       subtitle: "Available 24/7 for emergencies",
-      content: "(346) 401-0323",
-      link: "tel:+1-346-401-0323"
+      content: "(832) 602-3499",
+      link: "tel:+1-832-602-3499"
     },
     {
       icon: Mail,
       title: "Email Us",
       subtitle: "Get a detailed quote",
-      content: "peterbusiness55@gmail.com",
-      link: "mailto:peterbusiness55@gmail.com"
+      content: "contact@rancherservices.com",
+      link: "mailto:contact@rancherservices.com"
     },
     {
       icon: MapPin,
@@ -141,8 +165,8 @@ const Contact = () => {
               <p className="text-white/90 mb-6 leading-relaxed">
                 Need immediate pressure washing service? We offer 24/7 emergency response for urgent commercial and residential cleaning needs throughout Houston.
               </p>
-              <a 
-                href="tel:+1-346-401-0323" 
+              <a
+                href="tel:+1-832-602-3499"
                 className="inline-flex items-center space-x-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
                 <Phone size={20} />
@@ -185,7 +209,7 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="form-input"
-                    placeholder="(346) 401-0323"
+                    placeholder="(xxx)-xxx-xxxx"
                   />
                 </div>
               </div>
@@ -266,13 +290,26 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full btn-primary text-lg group"
+                disabled={isSubmitting}
+                className="w-full btn-primary text-lg group disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <span className="flex items-center justify-center space-x-2">
-                  <Send size={20} className="group-hover:animate-pulse" />
-                  <span>Send Free Quote Request</span>
+                  <Send size={20} className={isSubmitting ? "animate-spin" : "group-hover:animate-pulse"} />
+                  <span>{isSubmitting ? 'Sending...' : 'Send Free Quote Request'}</span>
                 </span>
               </button>
+
+              {submitStatus === 'success' && (
+                <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg text-center">
+                  Thank you for your inquiry! We will contact you within 2 hours with your quote.
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg text-center">
+                  Something went wrong. Please try again or call us at (832) 602-3499.
+                </div>
+              )}
 
               <p className="text-sm text-gray-500 text-center leading-relaxed">
                 * Required fields. We typically respond within <span className="font-bold text-blue-600">2 hours</span> during business hours with your detailed quote.

@@ -52,8 +52,8 @@ const Footer = () => {
                 </div>
                 <div>
                   <div className="text-white/60 text-sm">Call or Text 24/7</div>
-                  <a href="tel:+1-346-401-0323" className="text-white font-bold text-lg hover:text-amber-400 transition-colors">
-                    (346) 401-0323
+                  <a href="tel:+1-832-602-3499" className="text-white font-bold text-lg hover:text-amber-400 transition-colors">
+                    (832) 602-3499
                   </a>
                 </div>
               </div>
@@ -64,8 +64,8 @@ const Footer = () => {
                 </div>
                 <div>
                   <div className="text-white/60 text-sm">Email Us</div>
-                  <a href="mailto:peterbusiness55@gmail.com" className="text-white font-semibold hover:text-amber-400 transition-colors">
-                    peterbusiness55@gmail.com
+                  <a href="mailto:contact@rancherservices.com" className="text-white font-semibold hover:text-amber-400 transition-colors">
+                    contact@rancherservices.com
                   </a>
                 </div>
               </div>

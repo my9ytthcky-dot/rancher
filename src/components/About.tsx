@@ -115,8 +115,8 @@ const About = () => {
               >
                 Experience the Difference
               </button>
-              <a 
-                href="tel:+1-346-401-0323"
+              <a
+                href="tel:+1-832-602-3499"
                 className="btn-secondary text-lg"
               >
                 Call for Free Estimate
