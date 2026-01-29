@@ -102,7 +102,7 @@ const Services = () => {
                 <div className="flex items-center justify-between pt-6 border-t border-gray-100">
                   <div className="text-2xl font-bold gradient-text">{service.price}</div>
                   <button
-                    onClick={() => document.getElementById('quote-form-submit')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                    onClick={() => document.getElementById('quote-form-middle')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
                     className="btn-primary text-sm"
                   >
                     Get Quote
@@ -124,7 +124,7 @@ const Services = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={() => document.getElementById('quote-form-submit')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+              onClick={() => document.getElementById('quote-form-middle')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
               className="btn-primary text-lg"
             >
               Get Free Estimate

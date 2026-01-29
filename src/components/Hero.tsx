@@ -4,7 +4,7 @@ import willWashingImg from './willwashing.png';
 
 const Hero = () => {
   const scrollToContact = () => {
-    const element = document.getElementById('quote-form-submit');
+    const element = document.getElementById('quote-form-middle');
     element?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
 
