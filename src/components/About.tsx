@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, Users, MapPin, Star, Shield, CheckCircle } from 'lucide-react';
+import image3 from './image3.jpeg';
 
 const About = () => {
   const stats = [
@@ -62,7 +63,7 @@ const About = () => {
             <div className="float">
               <div className="aspect-w-4 aspect-h-3 rounded-2xl overflow-hidden shadow-large relative">
                 <img
-                  src="image/components/image3.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src={image3}
                   alt="Professional pressure washing team"
                   className="w-full h-full object-cover"
                 />
