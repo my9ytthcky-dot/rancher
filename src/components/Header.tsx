@@ -28,7 +28,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto container-padding flex items-center justify-between py-4">
         <div className="flex items-center space-x-4">
               <img 
-                src="image/components/Copy of Ancher_20260106_084448_0000~2.png
+                src="image/components/Copy of Ancher_20260106_084448_0000~2.png"
                 alt="Rancher Services Logo"
                 className="w-12 h-12 rounded-lg object-cover"
               />
