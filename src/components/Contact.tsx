@@ -214,7 +214,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div>
+              <div id="quote-form-middle">
                 <label htmlFor="email" className="block text-sm font-bold text-gray-700 mb-2">
                   EMAIL ADDRESS
                 </label>
