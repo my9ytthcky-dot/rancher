@@ -20,7 +20,7 @@ const Hero = () => {
       {/* Background Image with Professional Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={willWashingImg}
+          src="setup.png"
           alt="Background"
           className="w-full h-full object-cover"
         />
