@@ -27,9 +27,7 @@ const Header = () => {
     }`}>
       <div className="max-w-7xl mx-auto container-padding flex items-center justify-between py-4">
         <div className="flex items-center space-x-4">
-              <img 
-              />
-              <div>
+               <div>
                 <h1 className={`text-2xl font-bold tracking-tight transition-colors duration-300 ${
                   isScrolled ? 'text-gray-900' : 'text-white'
                 }`}>
