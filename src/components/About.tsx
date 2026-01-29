@@ -62,7 +62,7 @@ const About = () => {
             <div className="float">
               <div className="aspect-w-4 aspect-h-3 rounded-2xl overflow-hidden shadow-large relative">
                 <img
-                  src="https://drive.google.com/file/d/1kknYP1S9HPa65H9HOG5-VwVu8aW9P40i/view?auto=compress&cs=tinysrgb&w=800"
+                  src="image/components/image3.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Professional pressure washing team"
                   className="w-full h-full object-cover"
                 />
