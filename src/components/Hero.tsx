@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, CheckCircle, Star, Award, Shield } from 'lucide-react';
+import willWashingImg from './willwashing.png';
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -19,7 +20,8 @@ const Hero = () => {
       {/* Background Image with Professional Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          <img src="https://github.com/my9ytthcky-dot/rancher/blob/main/src/components/willwashing.png" auto=compress&cs=tinysrgb&w=1920"
+          src={willWashingImg}
+          alt="Background"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-gray-900/80"></div>
@@ -92,7 +94,7 @@ const Hero = () => {
           <div className="relative fade-in-up stagger-3 lg:block hidden">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-large relative float">
               <img
-                src="/src/components/willwashing.png"
+                src={willWashingImg}
                 alt="Professional pressure washing team at work"
                 className="w-full h-full object-cover"
               />
