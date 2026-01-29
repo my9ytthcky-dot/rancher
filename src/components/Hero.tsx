@@ -4,8 +4,8 @@ import willWashingImg from './willwashing.png';
 
 const Hero = () => {
   const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    element?.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById('quote-form-submit');
+    element?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
 
   const trustIndicators = [
