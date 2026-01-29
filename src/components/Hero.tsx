@@ -20,7 +20,6 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           <img src="https://github.com/my9ytthcky-dot/rancher/blob/main/src/components/willwashing.png" auto=compress&cs=tinysrgb&w=1920"
-          alt="Professional pressure washing service"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-gray-900/80"></div>
