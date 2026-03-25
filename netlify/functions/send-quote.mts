@@ -139,7 +139,7 @@ This quote request was submitted through the Rancher Services website.
     `.trim();
 
     const msg = {
-      to: "Contact@rancherservices.com",
+      to: "RancherWashing@gmail.com",
       from: "Contact@rancherservices.com",
       subject: `New Quote Request from ${name} - ${serviceLabel}`,
       text: emailContent,

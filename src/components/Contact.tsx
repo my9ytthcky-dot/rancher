@@ -67,8 +67,8 @@ const Contact = () => {
       icon: Mail,
       title: "Email Us",
       subtitle: "Get a detailed quote",
-      content: "contact@rancherservices.com",
-      link: "mailto:contact@rancherservices.com"
+      content: "RancherWashing@gmail.com",
+      link: "mailto:RancherWashing@gmail.com"
     },
     {
       icon: MapPin,

@@ -64,8 +64,8 @@ const Footer = () => {
                 </div>
                 <div>
                   <div className="text-white/60 text-sm">Email Us</div>
-                  <a href="mailto:contact@rancherservices.com" className="text-white font-semibold hover:text-amber-400 transition-colors">
-                    contact@rancherservices.com
+                  <a href="mailto:RancherWashing@gmail.com" className="text-white font-semibold hover:text-amber-400 transition-colors">
+                    RancherWashing@gmail.com
                   </a>
                 </div>
               </div>
