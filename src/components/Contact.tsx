@@ -26,12 +26,18 @@ const Contact = () => {
     setSubmitStatus('idle');
 
     try {
-      const response = await fetch('/api/send-quote', {
+      const body = new URLSearchParams({
+        'form-name': 'quote',
+        'subject': `New Quote Request from ${formData.name || 'a visitor'}`,
+        ...formData,
+      }).toString();
+
+      const response = await fetch('/__forms.html', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify(formData),
+        body,
       });
 
       if (response.ok) {
@@ -179,7 +185,12 @@ const Contact = () => {
           <div className="card rounded-2xl p-10 fade-in-right">
             <h3 className="text-2xl font-bold gradient-text mb-8">Request Free Quote</h3>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className="space-y-6">
+              <input type="hidden" name="form-name" value="quote" />
+              <input type="hidden" name="subject" value="New Quote Request - Rancher Services" />
+              <p style={{ display: 'none' }}>
+                <label>Don't fill this out: <input name="bot-field" /></label>
+              </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-bold text-gray-700 mb-2">
